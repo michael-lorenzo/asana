@@ -1,0 +1,4 @@
+# See https://app.asana.com/0/my-apps
+personal_access_token = ""
+# See https://app.asana.com/api/1.0/workspaces?opt_pretty
+workspace_gid = ""
