@@ -61,12 +61,22 @@ func main() {
 		log.Fatal("Task must have a name")
 	}
 
+	notes := flag.Arg(1)
+	if notes == "-" {
+		buf := new(bytes.Buffer)
+		_, err := buf.ReadFrom(os.Stdin)
+		if err != nil {
+			log.Fatal(err)
+		}
+		notes = buf.String()
+	}
+
 	data := Payload{
 		Data: Data{
 			Name:      flag.Arg(0),
 			Assignee:  "me",
 			Workspace: viper.GetString("workspace_gid"),
-			Notes:     flag.Arg(1),
+			Notes:     notes,
 		},
 	}
 	payloadBytes, err := json.Marshal(data)
