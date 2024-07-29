@@ -3,7 +3,7 @@ A CLI utility for creating tasks in a Asana.
 
 # Build
 ```sh
-go install github.com/michael-lorenzo/asana@lastest
+go install github.com/michael-lorenzo/asana@latest
 asana -generate
 ```
 
